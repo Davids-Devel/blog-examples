@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Upload Video</title>
+</head>
+<body>
+	<input type="text" id="title" placeholder="Video Title">
+	<label for="public">Publico</label>
+	<input type="checkbox" name="public" id="public">
+	<textarea id="description" placeholder="Video Description"></textarea>
+	<input type="file" id="video">
+	<button onclick="upload()">Enviar</button>
+	<script>
+		let fileInupt = document.getElementById('video');
+		var file;
+		fileInupt.addEventListener("change", ({target})=>{
+			file = target.files[0];
+		}, false);
+
+		function upload() {
+			let title = document.getElementById('title').value;
+			let description = document.getElementById("description").value;
+			let public = document.getElementById("public").checked;
+			
+			let params = new FormData();
+			params.append("title", title);
+			params.append("public", public);
+			params.append("description", description);
+			params.append("file", file);
+
+			fetch("/upload-video", {
+				method:"POST",
+				body:params
+			})
+			.then(res=>res.json())
+			.then(({status})=>{
+				if(status === "success") alert("Video Subido con Exito");
+				else alert("Error al Subir");
+			})
+		}
+	</script>
+</body>
+</html>

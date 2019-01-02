@@ -1,0 +1,19 @@
+{
+	"name": "youtube-upload",
+	"version": "1.0.0",
+	"description": "Server Example To Upload YouTube Videos",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Davids-Devel/blog-examples.git"
+	},
+	"author": "David González <djgm1206@gmail.com>",
+	"license": "ISC",
+	"dependencies": {
+		"es6-promise": "^4.1.1",
+		"express": "^4.15.4",
+		"express-fileupload": "^0.4.0",
+		"googleapis": "^32.0.0",
+		"isomorphic-fetch": "^2.2.1"
+	}
+}
