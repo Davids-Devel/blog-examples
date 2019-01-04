@@ -14,8 +14,8 @@ const {google} = require("googleapis");
 const OAuth2 = google.auth.OAuth2;
 const youtube = google.youtube("v3");
 
-const client_id = "24315564955-olln4hcqhra1gffprbm5cibf6lcftc49.apps.googleusercontent.com";
-const client_secret = "TEHHy5mLKTqOrt0RjeEbgEKz";
+const client_id = "";
+const client_secret = "";
 
 class UploadYoutubeVideo {
 	constructor(){
